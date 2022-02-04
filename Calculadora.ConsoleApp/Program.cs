@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Calculadora.ConsoleApp
 {
@@ -12,7 +12,7 @@ namespace Calculadora.ConsoleApp
             string opcao = "";
             do
             {
-               
+
                 Console.WriteLine("Digite o primeiro numero: ");
                 double val1 = double.Parse(Console.ReadLine());
                 Console.WriteLine("Digite o segundo numero: ");
@@ -22,43 +22,49 @@ namespace Calculadora.ConsoleApp
 
                 opcao = Console.ReadLine();
 
-                double soma = val1 + val2;
-                double sub = val1 - val2;
-                double prod = val1 * val2;
-                double div = val1 / val2;
+                double soma = (val1 + val2);
+                double sub = (val1 - val2);
+                double prod = (val1 * val2);
+                double div = (val1 / val2);
 
-                //Console.WriteLine($"O valor da soma foi: {soma} \nO valor da Subtração foi: {sub} \nO valor do produto foi {prod}");
-                if (opcao == "1")
+
+                if (opcao == "1" || opcao == "2" || opcao == "3" || opcao == "4" || opcao == "s")
                 {
-                    Console.WriteLine($"O valor da soma foi: {soma}\n");
-                }
-                if (opcao == "2")
-                {
-                    Console.WriteLine($"O valor da subtração foi: {sub}\n");
-                }
-                if (opcao == "3")
-                {
-                    Console.WriteLine($"O valor do produto foi: {prod}\n");
-                }
-                if (opcao == "4")
-                {
-                    if (val2 != 0)
+                    if (opcao == "1")
                     {
-
-                        Console.WriteLine($"O valor da divisão foi: {div}\n");
+                        Console.WriteLine($"O valor da soma foi: {soma.ToString("F")}\n");
                     }
-                    else
+                    if (opcao == "2")
                     {
-                        Console.WriteLine("ERRO! Valor do denominador da divisão tem que ser  diferente de zero!!!");
+                        Console.WriteLine($"O valor da subtração foi: {sub.ToString("F")}\n");
+                    }
+                    if (opcao == "3")
+                    {
+                        Console.WriteLine($"O valor do produto foi: {prod.ToString("F")}\n");
+                    }
+                    if (opcao == "4")
+                    {
+                        if (val2 != 0)
+                        {
+
+                            Console.WriteLine($"O valor da divisão foi: {div.ToString("F")}\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("ERRO! Valor do denominador da divisão tem que ser  diferente de zero!!!");
+                        }
+                    }
+                    if (opcao == "s")
+                    {
+                        break;
                     }
                 }
+                else
+                {
+                    Console.WriteLine("ERRO: Você precisa uma das Opções Oferecidas!!!");
+                }
 
-
-
-
-
-            } while (opcao == "1" || opcao == "2" || opcao == "3" || opcao == "4");
-
+            } while (opcao != "s");
         }
     }
 }
