@@ -61,7 +61,7 @@ namespace Calculadora.ConsoleApp
                 }
                 else
                 {
-                    Console.WriteLine("ERRO: Você precisa uma das Opções Oferecidas!!!");
+                    Console.WriteLine("ERRO: Você precisa selecionar uma das Opções Oferecidas!!!");
                 }
 
             } while (opcao != "s");
